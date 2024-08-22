@@ -22,13 +22,10 @@ func BuildInsertPostStmts(output *string, responses *string, count int) {
 
 	var date_last_updated time.Time
 	postDate := time.Now()
-
-	// overallCountMax := count * responseCount
-	// var overallCounter = 0
 	for i := 1; i < count; i++ {
 		number_responses := 0
 		user_id := rand.Intn(19) + 1
-		room_id := rand.Intn(7) + 1
+		room_id := 1
 		post_text := PARAGRAPHS[rand.Intn(len(PARAGRAPHS))]
 		post_title := TITLES[i]
 
@@ -51,7 +48,6 @@ func BuildInsertPostStmts(output *string, responses *string, count int) {
 		} else {
 			*output = *output + "\n"
 		}
-		// fmt.Println(postDate.Sub(date_last_updated))
 		postDate = postDate.AddDate(0, 0, 1)
 	}
 	*output = strings.TrimRight(*output, ",\n")
@@ -79,6 +75,5 @@ func BuildInsertResponseStmt(post_id int, orig_user_id int, responses *string, p
 	*responses = *responses + fmt.Sprintf("(%v, %v, %v, %v)",
 		post_id, responseDate_formatted, response_text_formatted, user_id)
 
-	// returnDate = postdate.Add(time.Duration(rand.Intn(60) * int(time.Minute)))
 	return responseDate
 }

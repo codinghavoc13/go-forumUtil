@@ -80,6 +80,7 @@ INSERT INTO react_forum.responses(
 var INSERT_ROOMS = `
 INSERT INTO react_forum.rooms(room_title, room_description)
 	VALUES
+	('Lorem Ipsum Chat', 'A room full of chats encoded in lorem ipsum'),
 	('Star Wars', 'All things Star Wars, legends, or cannon'),
 	('Star Trek','All things Star Trek'),
 	('Coding - Backend Development','Discussion place for backend specific developerment of any language'),
