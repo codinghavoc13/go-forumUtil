@@ -72,3 +72,12 @@ func checkingRandomNumber() {
 	}
 	fmt.Println(results)
 }
+
+func getTwoDifferentUserIDs() {
+	orig_user := rand.Intn(20)
+	new_user := rand.Intn(20)
+	for new_user == orig_user {
+		fmt.Println("Getting a different new user id")
+	}
+	fmt.Printf("Orig user id: %v\nNew user id: %v", orig_user, new_user)
+}

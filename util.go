@@ -3,12 +3,7 @@ package main
 import (
 	"os"
 	"strings"
-	"time"
 )
-
-func generateDate(date *time.Time) {
-
-}
 
 /*
 Reads a long list of short lipsum generated content and breaks it down into
