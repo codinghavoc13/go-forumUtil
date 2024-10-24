@@ -62,7 +62,7 @@ func BuildInsertResponseStmt(post_id int, orig_user_id int, responses *string, p
 	// 	VALUES (?, ?, ?, ?);
 
 	responseDate := postdate.
-		Add(time.Duration((rand.Intn(4) + 1) * int(time.Hour))).
+		Add(time.Duration((rand.Intn(36) + 1) * int(time.Hour))).
 		Add(time.Duration(rand.Intn(60) * int(time.Minute)))
 	responseDate_formatted := "'" + responseDate.String()[:27] + "'"
 	response_text := RESPONSES[rand.Intn(len(RESPONSES))]
